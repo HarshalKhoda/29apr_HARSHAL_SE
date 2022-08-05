@@ -48,9 +48,9 @@ class  Teacher: Person{
 
 int main(){
 	Student s;
-	s.setStudent("John", 12,80);
+	s.setStudent("Harshal", 12,80);
 	s.displayStudent();
 	Teacher t;
-	t.setTeacher("Abraham", 15, 9000.98);
+	t.setTeacher("Hetvi mam", 15,000);
 	t.displayTeacher();
 }
