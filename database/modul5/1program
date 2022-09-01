@@ -1,0 +1,105 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 01, 2022 at 09:12 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.0.19
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `stdetails`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam`
+--
+
+CREATE TABLE `exam` (
+  `rollNO` int(11) DEFAULT NULL,
+  `s_code` varchar(50) DEFAULT NULL,
+  `marks` int(11) DEFAULT NULL,
+  `p_code` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam`
+--
+
+INSERT INTO `exam` (`rollNO`, `s_code`, `marks`, `p_code`) VALUES
+(1, 'CS11', 60, 'cs'),
+(1, 'CS12', 66, 'cs'),
+(2, 'PY11', 67, 'PYTHON'),
+(2, 'PY12', 68, 'PYTHON'),
+(3, 'PY13', 70, 'PYTHON'),
+(3, 'PY14', 58, 'PYTHON'),
+(4, 'PY15', 90, 'PYTHON'),
+(4, 'PY16', 69, 'PYTHON'),
+(5, 'PY15', 95, 'PYTHON'),
+(5, 'PY16', 98, 'PYTHON');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `rollNO` int(11) NOT NULL,
+  `stNAME` varchar(50) DEFAULT NULL,
+  `Branch` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`rollNO`, `stNAME`, `Branch`) VALUES
+(1, 'harshal', 'cs'),
+(2, 'KHUSHI', 'PYTHON'),
+(3, 'TEESHA', 'PYTHON'),
+(4, 'AAYUSH', 'PYTHON'),
+(5, 'PRINCY', 'PYTHON');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `exam`
+--
+ALTER TABLE `exam`
+  ADD KEY `rollNO` (`rollNO`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`rollNO`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `exam`
+--
+ALTER TABLE `exam`
+  ADD CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`rollNO`) REFERENCES `student` (`rollNO`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
