@@ -1,0 +1,80 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 02, 2022 at 09:52 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `datab`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coustmer`
+--
+
+CREATE TABLE `coustmer` (
+  `PKcmm` int(50) DEFAULT NULL,
+  `CNAME` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `Rating` int(50) DEFAULT NULL,
+  `FKsno` int(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `coustmer`
+--
+
+INSERT INTO `coustmer` (`PKcmm`, `CNAME`, `city`, `Rating`, `FKsno`) VALUES
+(201, 'hoffman', 'London', 100, 1001),
+(202, 'giovaman', 'Roe', 200, 1003),
+(203, 'Liu', 'San jos', 300, 1002),
+(204, 'grass', 'San jos', 100, 1002),
+(206, 'roy', 'San jos', 200, 1007),
+(207, 'jesfer', 'San jos', 100, 1004);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salsperson`
+--
+
+CREATE TABLE `salsperson` (
+  `PKSNo` int(50) DEFAULT NULL,
+  `SNAME` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `COMM` int(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `salsperson`
+--
+
+INSERT INTO `salsperson` (`PKSNo`, `SNAME`, `city`, `COMM`) VALUES
+(1001, 'peel', 'London', 12),
+(1001, 'peel', 'London', 12),
+(1001, 'peel', 'London', 12),
+(1001, 'pills', 'London', 0),
+(1002, 'seress', 'san jose', 0),
+(1004, 'motika', 'London', 0),
+(1007, 'rafkimn', 'London', 0),
+(1003, 'axelrod', 'London', 0);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
