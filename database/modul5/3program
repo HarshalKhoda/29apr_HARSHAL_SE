@@ -1,0 +1,80 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 02, 2022 at 09:26 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `data`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE `employee` (
+  `id` int(50) DEFAULT NULL,
+  `Frist_Name` varchar(50) DEFAULT NULL,
+  `Last_Name` varchar(50) DEFAULT NULL,
+  `salary` int(50) DEFAULT NULL,
+  `Join_date` varchar(50) DEFAULT NULL,
+  `Department` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`id`, `Frist_Name`, `Last_Name`, `salary`, `Join_date`, `Department`) VALUES
+(1, 'JOHN', 'ABRAHAM', 100000, '1-JAN-13', 'BANKING'),
+(2, 'JOY', 'CLERK', 7000, '1-JAN-13', 'INSURNCE'),
+(3, 'ROY', 'THOMAS', 60000, '1-JAN-13', 'BANKING'),
+(4, 'TOM', 'JOS', 60000, 'O1-JAN-13', 'BANKING'),
+(5, 'JERRY', 'PENTTY', 650000, 'O1-FBN-13', 'INSURANCE'),
+(6, 'PHILLIP', 'METHUE', 750000, 'O1-FEN-13', 'INSURANCE'),
+(7, 'TESTNAME', '123', 650000, 'O1-FEN-13', 'SERVICES'),
+(8, 'TESTNAME2', '123', 60000, 'O1-FEN-13', 'SERVICES');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `incentive`
+--
+
+CREATE TABLE `incentive` (
+  `Employee_ref_id` int(50) DEFAULT NULL,
+  `incentive_date` int(50) DEFAULT NULL,
+  `incentive_ammount` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `incentive`
+--
+
+INSERT INTO `incentive` (`Employee_ref_id`, `incentive_date`, `incentive_ammount`) VALUES
+(1, 1, '5000'),
+(2, 1, '3000'),
+(3, 1, '4000'),
+(3, 1, '4000'),
+(1, 1, '4500'),
+(2, 1, '3500');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
